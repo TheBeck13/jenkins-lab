@@ -2,7 +2,7 @@ pipeline{
   agent {
     docker { 
       image 'ubuntu'
-      label 'test'
+      label 'production'
     }
   }
   
