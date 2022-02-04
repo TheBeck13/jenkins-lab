@@ -1,0 +1,19 @@
+pipeline {
+    agent {
+      docker { image 'openjdk' }
+    }
+
+    stages {
+        stage('COMPILE') {
+            steps {
+                sh 'wget https://raw.githubusercontent.com/TheBeck13/jenkins-lab/main/Prova.java'
+                sh 'javac Prova.java'
+            }
+        }
+        stage('RUN') {
+            steps {
+                sh 'java Prova'
+            }
+        }
+    }
+}
